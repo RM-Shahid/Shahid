@@ -155,9 +155,9 @@ class PredictiveToolGUI:
         self.cleaned_train_df = pd.concat([self.X_train, self.y_train.reset_index(drop=True)], axis=1)
         self.cleaned_test_df = pd.concat([self.X_test, self.y_test.reset_index(drop=True)], axis=1)
 
-        self.output_text.insert(tk.END, "\n📊 Train Data Description:\n")
+        self.output_text.insert(tk.END, "\nTrain Data Description:\n")
         self.output_text.insert(tk.END, self.cleaned_train_df.describe().T.round(3).to_string())
-        self.output_text.insert(tk.END, "\n\n📊 Test Data Description:\n")
+        self.output_text.insert(tk.END, "\n\nTest Data Description:\n")
         self.output_text.insert(tk.END, self.cleaned_test_df.describe().T.round(3).to_string())
         self.output_text.insert(tk.END, "\n→ Preprocessing Completed\n", "bold")
         self.output_text.insert(tk.END, "• Missing values handled using KNN Imputer (k=3)\n")
